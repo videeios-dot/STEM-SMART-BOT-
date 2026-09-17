@@ -31,11 +31,13 @@ int ledOne = 2;
 
 int ledTwo = 12;
 
+const speed = 190; 
+
  void moveForward(){
-moveMotor(frontLeftMotor, FORWARD);
-moveMotor(frontRightMotor, FORWARD); 
-moveMotor(backLeftMotor, FORWARD);
-moveMotor(backRightMotor, FORWARD);
+moveMotor(frontLeftMotor, FORWARD, speed);
+moveMotor(frontRightMotor, FORWARD, speed); 
+moveMotor(backLeftMotor, FORWARD, speed);
+moveMotor(backRightMotor, FORWARD, speed);
 }
 void turnLeft(90){
 moveMotor(frontLeftMotor, BACKWARD);
