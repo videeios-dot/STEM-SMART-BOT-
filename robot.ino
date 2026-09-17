@@ -50,7 +50,7 @@ moveMotor(frontLeftMotor, FORWARD);
 moveMotor(backRightMotor, BACKWARD);
 moveMotor(backLeftMotor, FORWARD);
 }
-long readDistance(){
+float readDistance(){
 digitalWrite(trig, LOW);
 delayMicroseconds(2);
 
@@ -91,7 +91,7 @@ stopMotors();
 }
 
 void loop(){
-long distance = readDistance; 
+float distance = readDistance; 
 
 if(distance > 10) {
 moveForward();
