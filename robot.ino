@@ -32,6 +32,15 @@ int ledOne = 2;
 int ledTwo = 12;
 
 const int speed = 190; 
+// =========================
+// ROUTE MEMORY
+// =========================
+
+#define LEFT  1
+#define RIGHT 2
+
+int route[20];
+int routeLength = 0;
 
  void moveForward(){
 moveMotor(frontLeftMotor, FORWARD, speed);
@@ -39,7 +48,7 @@ moveMotor(frontRightMotor, FORWARD, speed);
 moveMotor(backLeftMotor, FORWARD, speed);
 moveMotor(backRightMotor, FORWARD, speed);
 }
-void turnLeft(int degrees){
+void turnLeft90(int degrees){
 moveMotor(frontLeftMotor, BACKWARD);
 moveMotor(frontRightMotor, FORWARD); 
 moveMotor(backLeftMotor, BACKWARD);
@@ -76,7 +85,15 @@ moveMotor(frontRightMotor, STOP);
 moveMotor(backLeftMotor, STOP);
 moveMotor(backRightMotor, STOP);
 }
+void recordLeftTurn() {
 
+  if (routeLength < 20) {
+    route[routeLength] = LEFT;
+    routeLength++;
+  }
+
+  turnLeft90();
+}
 
 void setup() {
 
@@ -102,6 +119,6 @@ if(distance > 10) {
 moveForward();
  } else{
 stopMotors();
-turnLeft();
+turnLeft90();
 };
 }
