@@ -46,6 +46,7 @@ moveMotor(backLeftMotor, BACKWARD);
 moveMotor(backRightMotor, FORWARD);
 
 delay(500);
+stopMotors(); 
 }
 
 void turnRight(int degrees){
@@ -63,8 +64,8 @@ delayMicroseconds(10);
 
 digitalWrite(trig, LOW);
  
-duration = pulseIn(echo, HIGH);
-distance= duration * 0.0343 / 2 ;
+long duration = pulseIn(echo, HIGH);
+float distance= duration * 0.0343 / 2 ;
 return distance;
 }
 
