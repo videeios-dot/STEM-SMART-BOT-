@@ -31,7 +31,7 @@ int ledOne = 2;
 
 int ledTwo = 12;
 
-const speed = 190; 
+const int speed = 190; 
 
  void moveForward(){
 moveMotor(frontLeftMotor, FORWARD, speed);
@@ -39,14 +39,14 @@ moveMotor(frontRightMotor, FORWARD, speed);
 moveMotor(backLeftMotor, FORWARD, speed);
 moveMotor(backRightMotor, FORWARD, speed);
 }
-void turnLeft(90){
+void turnLeft(int degrees){
 moveMotor(frontLeftMotor, BACKWARD);
 moveMotor(frontRightMotor, FORWARD); 
 moveMotor(backLeftMotor, BACKWARD);
 moveMotor(backRightMotor, FORWARD);
 }
 
-void turnRight(90){
+void turnRight(int degrees){
 moveMotor(frontRightMotor, BACKWARD);
 moveMotor(frontLeftMotor, FORWARD); 
 moveMotor(backRightMotor, BACKWARD);
@@ -93,11 +93,11 @@ stopMotors();
 }
 
 void loop(){
-float distance = readDistance; 
+float distance = readDistance(); 
 
 if(distance > 10) {
 moveForward();
- } else(distance< 10){
+ } else{
 stopMotors();
 steerLeft(90);
 };
