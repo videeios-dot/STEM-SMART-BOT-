@@ -91,7 +91,7 @@ stopMotors();
 }
 
 void loop(){
-int distance = readDistance; 
+long distance = readDistance; 
 
 if(distance > 10) {
 moveForward();
