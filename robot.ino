@@ -44,6 +44,8 @@ moveMotor(frontLeftMotor, BACKWARD);
 moveMotor(frontRightMotor, FORWARD); 
 moveMotor(backLeftMotor, BACKWARD);
 moveMotor(backRightMotor, FORWARD);
+
+delay(500);
 }
 
 void turnRight(int degrees){
@@ -80,13 +82,13 @@ void setup() {
 pinMode(frontLeftMotor, OUTPUT);
 pinMode(frontRightMotor, OUTPUT);
 pinMode(backLeftMotor, OUTPUT);
-pinmode(backRightMotor, OUTPUT);
+pinMode(backRightMotor, OUTPUT);
 
 pinMode(trig, OUTPUT);
 pinMode(echo, INPUT);
 
-pinmode(ledOne, OUTPUT);
-pinmode(ledTwo, OUTPUT);
+pinMode(ledOne, OUTPUT);
+ pinMode(ledTwo, OUTPUT);
 
 stopMotors();
 
@@ -99,6 +101,6 @@ if(distance > 10) {
 moveForward();
  } else{
 stopMotors();
-turnLeft(90);
+turnLeft();
 };
 }
