@@ -62,7 +62,7 @@ delayMicroseconds(10);
 digitalWrite(trig, LOW);
  
 duration = pulseIn(echo, HIGH);
-distance= duration*0.0343 / 2
+distance= duration * 0.0343 / 2 ;
 return distance;
 }
 
@@ -99,6 +99,6 @@ if(distance > 10) {
 moveForward();
  } else{
 stopMotors();
-steerLeft(90);
+turnLeft(90);
 };
 }
